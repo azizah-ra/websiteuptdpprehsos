@@ -1,0 +1,22 @@
+PAKET HALAMAN FASILITAS DENGAN DENAH ASLI
+UPTD PP REHSOS KABUPATEN SIDOARJO
+
+1. Buat cadangan resources/views/fasilitas.blade.php sebelumnya.
+2. Ekstrak ZIP ini KE ROOT folder proyek Laravel:
+   C:\laragon\www\website-liponsos\
+3. Saat Windows meminta konfirmasi, pilih Replace untuk file fasilitas.blade.php.
+4. Jangan menghapus resources/views/layouts/app.blade.php atau file lainnya.
+5. Jalankan di terminal Laragon dari root proyek:
+   php artisan optimize:clear
+6. Buka http://127.0.0.1:8000/fasilitas#denah lalu Ctrl+F5.
+
+HASIL:
+- Denah ASLI tampil sebagai gambar langsung di halaman Fasilitas.
+- Klik gambar atau tombol Perbesar Denah untuk membuka PDF dalam pop-up.
+- Buka PDF pada tab baru tersedia sebagai alternatif.
+- Hero foto, kartu fasilitas, aktivitas, dan pop-up fasilitas tetap tersedia.
+
+PERHATIAN PUBLIKASI:
+Denah ini memuat tata letak ruang isolasi serta akses gerbang; pastikan instansi
+menyetujui pemuatan detail tersebut sebelum website dibuka untuk publik.
+File PDF di bawah public/dokumen dapat dibuka oleh setiap orang yang mengetahui URL.
