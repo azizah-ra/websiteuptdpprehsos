@@ -1,0 +1,115 @@
+/* =====================================
+   TRANSISI MENU — 3 DOTS BOUNCE (MAX 0.2s)
+===================================== */
+
+/* Nonaktifkan loader versi sebelumnya */
+#rehsos-nav-screen,
+#rehsos-menu-loader,
+#rehsos-menu-transition,
+#rehsos-page-fade,
+#rehsos-line-loader {
+    display: none !important;
+}
+
+/* Layar transisi */
+#rehsos-dots-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+
+    background: #07120F;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#rehsos-dots-loader[hidden] {
+    display: none !important;
+}
+
+#rehsos-dots-loader.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Wadah 3 titik */
+.rehsos-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Bentuk masing-masing titik */
+.rehsos-dots span {
+    width: 8px;
+    height: 8px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+
+    /* Durasi animasi + delay tiap titik tetap selesai <= 200ms */
+    animation: rehsosDotBounce 140ms ease-in-out both;
+}
+
+/* Jeda bergantian (stagger) */
+.rehsos-dots span:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+.rehsos-dots span:nth-child(2) {
+    animation-delay: 30ms;
+}
+
+.rehsos-dots span:nth-child(3) {
+    animation-delay: 60ms;
+}
+
+/* Gerakan naik lalu turun kembali */
+@keyframes rehsosDotBounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(-9px);
+        opacity: 1;
+    }
+}
+
+/* Halaman baru zoom dari kecil */
+.rehsos-menu-enter {
+    animation: rehsosPageZoom
+        150ms cubic-bezier(.22,1,.36,1) both;
+    transform-origin: center top;
+}
+
+@keyframes rehsosPageZoom {
+    from {
+        opacity: .5;
+        transform: scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hindari konflik transisi bawaan */
+@view-transition {
+    navigation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rehsos-dots span,
+    .rehsos-menu-enter {
+        animation: none !important;
+    }
+}

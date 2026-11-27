@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10231d">
+    <meta name="description" content="Website profil UPTD PP REHSOS Kabupaten Sidoarjo">
+    <title>Fasilitas dan Kegiatan | UPTD PP REHSOS Kabupaten Sidoarjo</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark: #10231d;
+            --green: #167c53;
+            --text: #19382a;
+            --muted: #63766b;
+            --soft: #f5f7f3;
+            --border: #e2e8e2;
+            --lime: #d9f0bd;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--text);
+            font: 15px/1.75 'DM Sans', Arial, sans-serif;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+        button { font: inherit; cursor: pointer; }
+
+        .container {
+            width: min(1200px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--dark);
+            color: #fff;
+            box-shadow: 0 3px 18px #00000014;
+        }
+
+        .nav-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            min-width: 0;
+        }
+
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            background: #fff;
+            padding: 4px;
+            border-radius: 50%;
+        }
+
+        .brand strong {
+            display: block;
+            font: 800 16px/1.3 Manrope, sans-serif;
+        }
+
+        .brand small {
+            display: block;
+            font-size: 10px;
+            color: #bfd2c4;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 700;
+            color: #eaf2ec;
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--lime);
+        }
+
+        .nav-links .contact-link {
+            background: var(--lime);
+            padding: 11px 20px;
+            color: var(--dark);
+            border-radius: 50px;
+        }
+
+        .nav-links .contact-link:hover {
+            background: #c7e8a2;
+            color: var(--dark);
+        }
+
+        .menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #ffffff44;
+            border-radius: 8px;
+            color: #fff;
+            background: transparent;
+            font-size: 23px;
+        }
+
+        /* KOMPONEN KONTEN */
+        .section { padding: 95px 0; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            display: block;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .heading {
+            margin: 0 0 20px;
+            color: var(--text);
+            font: 800 clamp(32px, 4.5vw, 56px)/1.15 Manrope, sans-serif;
+            letter-spacing: -1.7px;
+        }
+
+        .lead {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--green);
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 50px;
+            background: var(--lime);
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 800;
+            transition: transform .2s ease;
+        }
+
+        .button:hover { transform: translateY(-2px); }
+
+        .page-heading {
+            padding: 76px 0 65px;
+            background: var(--soft);
+        }
+
+        .page-heading h1 {
+            max-width: 850px;
+            margin: 0 0 18px;
+            font: 800 clamp(40px, 5.8vw, 73px)/1.1 Manrope, sans-serif;
+            letter-spacing: -2.5px;
+        }
+
+        .page-heading p {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: #c6d8cb;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            font: 800 16px Manrope, sans-serif;
+            margin: 0 0 16px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #b2c8b9;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .footer a { display: block; margin-bottom: 6px; }
+        .footer a:hover { color: #fff; }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #ffffff22;
+            font-size: 11px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .menu-button { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                padding: 18px 24px 24px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                border-top: 1px solid #ffffff25;
+            }
+
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 11px 0; }
+            .nav-links .contact-link {
+                margin-top: 10px;
+                text-align: center;
+                padding: 12px;
+            }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 580px) {
+            .container { width: calc(100% - 34px); }
+            .nav-inner { min-height: 72px; }
+            .brand img { width: 42px; height: 42px; }
+            .brand strong { font-size: 13px; }
+            .brand small { font-size: 9px; }
+            .section { padding: 70px 0; }
+            .page-heading { padding: 60px 0 45px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .button { transition: none; }
+        }
+
+
+/* =====================================
+   NAVBAR UPTD PP REHSOS - FINAL
+===================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    color: #173b2a;
+    border-bottom: 1px solid #e7eee9;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.035);
+}
+
+.nav-inner {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.brand strong {
+    display: block;
+    color: #173b2a;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.brand small {
+    display: block;
+    color: #728477;
+    font-size: 11px;
+}
+
+/* LINK NAVIGASI */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    color: #34483c;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color .25s ease;
+}
+
+.nav-links a:not(.contact-link):hover,
+.nav-links a:not(.contact-link).active {
+    color: #087f56;
+}
+
+.nav-links a:not(.contact-link)::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #087f56;
+    transition: width .25s ease;
+}
+
+.nav-links a:not(.contact-link):hover::after,
+.nav-links a:not(.contact-link).active::after {
+    width: 100%;
+}
+
+/* TOMBOL HUBUNGI KAMI */
+
+.nav-links .contact-link,
+.nav-links .contact-link.active {
+    background: #087f56;
+    color: #ffffff;
+    padding: 13px 23px;
+    border-radius: 50px;
+    white-space: nowrap;
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.nav-links .contact-link:hover {
+    background: #066a47;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* MENU HP */
+
+.menu-button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    color: #173b2a;
+    background: transparent;
+    border: 1px solid #dce8df;
+    border-radius: 9px;
+    font-size: 24px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 18px 25px 28px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid #e7eee9;
+        box-shadow: 0 15px 25px rgba(0,0,0,.06);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        color: #34483c;
+        padding: 13px 0;
+        border-bottom: 1px solid #edf2ee;
+    }
+
+    .nav-links a:not(.contact-link)::after {
+        display: none;
+    }
+
+    .nav-links .contact-link {
+        margin-top: 16px;
+        padding: 14px 20px;
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .nav-inner {
+        min-height: 72px;
+    }
+
+    .brand img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .brand strong {
+        font-size: 13px;
+    }
+
+    .brand small {
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-links a,
+    .nav-links a::after,
+    .nav-links .contact-link {
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   INTERNAL PAGES — MODERN COMPACT TYPOGRAPHY
+   Tidak memengaruhi halaman Beranda
+========================================== */
+
+/* HERO / JUDUL HALAMAN */
+.inner-page .page-heading {
+    padding: 54px 0 55px;
+    background: #f6f8f5;
+}
+
+.inner-page .page-heading h1 {
+    max-width: 900px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(32px, 3.6vw, 47px);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -1.7px;
+    margin: 0 0 16px;
+    color: #18392a;
+}
+
+.inner-page .page-heading p {
+    max-width: 690px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #65786a;
+    margin: 0;
+}
+
+/* JUDUL SETIAP BAGIAN */
+.inner-page .heading {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 2.7vw, 35px);
+    line-height: 1.28;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+    color: #18392a;
+}
+
+/* LABEL KECIL DI ATAS JUDUL */
+.inner-page .eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    margin-bottom: 14px;
+    color: #168055;
+}
+
+/* PARAGRAF UTAMA */
+.inner-page .lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #66796c;
+}
+
+/* JARAK ANTAR BAGIAN */
+.inner-page .section {
+    padding: 65px 0;
+}
+
+/* PENGECILAN KHUSUS HERO LAYANAN
+   Jika masih memakai class service-page */
+.inner-page .service-page .intro {
+    padding: 57px 0;
+}
+
+.inner-page .service-page .intro h1 {
+    font-size: clamp(32px, 3.6vw, 47px);
+    line-height: 1.18;
+    letter-spacing: -1.7px;
+    margin-bottom: 16px;
+}
+
+.inner-page .service-page .intro p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* KOMPONEN PROFIL */
+.inner-page .profil-poster .judul-kecil {
+    font-size: 21px;
+}
+
+.inner-page .profil-poster .teks-visi {
+    font-size: clamp(19px, 2vw, 25px);
+    line-height: 1.6;
+}
+
+.inner-page .profil-poster .teks-profil {
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* BAGIAN PEMETAAN */
+.inner-page .maps-information {
+    padding: 65px 0;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 900px) {
+
+    .inner-page .page-heading {
+        padding: 45px 0;
+    }
+
+    .inner-page .section {
+        padding: 55px 0;
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 580px) {
+
+    .inner-page .page-heading {
+        padding: 40px 0 43px;
+    }
+
+    .inner-page .page-heading h1,
+    .inner-page .service-page .intro h1 {
+        font-size: 31px;
+        line-height: 1.22;
+        letter-spacing: -0.9px;
+    }
+
+    .inner-page .heading {
+        font-size: 26px;
+        line-height: 1.3;
+        letter-spacing: -0.6px;
+    }
+
+    .inner-page .page-heading p,
+    .inner-page .lead {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .inner-page .section {
+        padding: 46px 0;
+    }
+
+    .inner-page .service-page .intro {
+        padding: 43px 0;
+    }
+
+    .inner-page .maps-information {
+        padding: 48px 0;
+    }
+}
+
+    </style>
+
+    <style>
+/* Halaman Fasilitas — warna dan tipografi konsisten dengan website */
+.fac-page {
+    --fac-dark: #173d2f;
+    --fac-green: #087e61;
+    --fac-muted: #607568;
+    --fac-border: #dfebe4;
+    --fac-soft: #f3f9f6;
+    color: var(--fac-dark);
+}
+.fac-page *, .fac-page *::before, .fac-page *::after { box-sizing: border-box; }
+.fac-page section[id] { scroll-margin-top: 95px; }
+.fac-page .fac-section { padding: 48px 0; }
+.fac-page .fac-soft { background: var(--fac-soft); }
+.fac-page .fac-label {
+    display: block; margin: 0 0 10px; color: var(--fac-green);
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+}
+.fac-page .fac-title {
+    margin: 0 0 14px; color: var(--fac-dark);
+    font: 800 clamp(26px,2.6vw,34px)/1.27 Manrope,sans-serif;
+    letter-spacing: -.8px;
+}
+.fac-page .fac-copy,
+.fac-page .fac-card p,
+.fac-page .fac-activity p,
+.fac-page .fac-note {
+    color: var(--fac-muted);
+    font-size: 14px;
+    line-height: 1.85;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    overflow-wrap: break-word;
+}
+.fac-page .fac-copy { margin: 0 0 14px; }
+.fac-page .fac-copy:last-child { margin-bottom: 0; }
+
+/* Hero foto — tidak memengaruhi intro logo/navbar */
+.fac-page .fac-hero {
+    background:
+        linear-gradient(90deg,rgba(7,42,32,.86),rgba(9,62,47,.70) 54%,rgba(10,75,56,.30)),
+        url('/images/UPTD.jpeg') center 48% / cover no-repeat;
+    padding: 43px 0 47px; color: #fff;
+}
+.fac-page .fac-hero .container { min-height: 0; display: block; }
+.fac-page .fac-hero-tag {
+    display: block; margin-bottom: 12px; color: #d6f5e6;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+}
+.fac-page .fac-hero h1 {
+    max-width: 800px; margin: 0 0 14px; color: #fff;
+    font: 800 clamp(31px,3.5vw,45px)/1.2 Manrope,sans-serif;
+    letter-spacing: -1.2px;
+}
+.fac-page .fac-hero p {
+    max-width: 690px; margin: 0 0 20px;
+    font-size: 14px; line-height: 1.8; color: #e9f7ef;
+}
+.fac-page .fac-hero-link {
+    display: inline-flex; align-items: center; width: fit-content;
+    max-width: 100%; padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,.85); border-radius: 999px;
+    background: transparent; color: #fff; font-size: 13px;
+    font-weight: 750; text-decoration: none;
+    transition: background .2s ease;
+}
+.fac-page .fac-hero-link:hover,
+.fac-page .fac-hero-link:focus-visible { background: rgba(255,255,255,.15); color: #fff; }
+
+/* Pengantar dua kolom */
+.fac-page .container.fac-intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr);
+    gap: 38px; align-items: center;
+}
+.fac-page .fac-intro-grid > * { min-width: 0; }
+.fac-page .fac-feature { border-radius: 16px; padding: 27px 29px; background: #e7f5ed; }
+.fac-page .fac-feature-mark {
+    display: inline-grid; place-items: center; width: 42px; height: 42px;
+    margin: 0 0 16px; border-radius: 12px;
+    background: var(--fac-green); color: #fff;
+    font: 800 20px/1 Manrope,sans-serif;
+}
+.fac-page .fac-feature h3 {
+    margin: 0 0 12px; color: var(--fac-dark);
+    font: 800 20px/1.4 Manrope,sans-serif;
+}
+
+/* Kartu fasilitas/kegiatan */
+.fac-page .fac-center { max-width: 790px; margin: 0 auto 26px; text-align: center; }
+.fac-page .fac-center .fac-title { margin-left: auto; margin-right: auto; }
+.fac-page .fac-center .fac-copy { text-align: center; text-align-last: center; }
+.fac-page .fac-grid {
+    display: grid; grid-template-columns: repeat(3,minmax(0,1fr));
+    gap: 17px;
+}
+.fac-page .fac-card, .fac-page .fac-activity {
+    min-width: 0; border: 1px solid var(--fac-border);
+    background: #fff; border-radius: 15px;
+}
+.fac-page .fac-card {
+    padding: 22px 23px; transition: border-color .2s ease, transform .2s ease;
+}
+.fac-page .fac-card:hover { border-color: #a7d9c1; transform: translateY(-2px); }
+.fac-page .fac-card-number, .fac-page .fac-activity-number {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; margin-bottom: 15px;
+    border-radius: 10px; background: #e4f5ec;
+    color: var(--fac-green); font: 800 13px Manrope,sans-serif;
+}
+.fac-page .fac-card h3, .fac-page .fac-activity h3 {
+    margin: 0 0 9px; color: var(--fac-dark);
+    font: 800 16px/1.45 Manrope,sans-serif;
+}
+.fac-page .fac-card p, .fac-page .fac-activity p {
+    margin: 0; font-size: 13px; line-height: 1.78;
+}
+.fac-page .fac-card-wide {
+    grid-column: 1 / -1; display: grid;
+    grid-template-columns: 48px minmax(0,1fr);
+    align-items: center; gap: 15px; padding: 20px 23px;
+}
+.fac-page .fac-card-wide .fac-card-number { margin: 0; }
+.fac-page .fac-card-wide h3 { margin-bottom: 5px; }
+.fac-page .fac-activity { padding: 22px 23px; }
+.fac-page .fac-note {
+    margin-top: 20px; padding: 16px 20px;
+    border-left: 3px solid #12835e; border-radius: 0 10px 10px 0;
+    background: #e9f4ed; font-size: 13px; line-height: 1.8;
+}
+.fac-page .fac-note strong { color: #173d2f; }
+
+/* Denah — gambar tetap terlihat; klik untuk PDF */
+.fac-page .fac-denah-header {
+    max-width: 780px; margin: 0 auto 22px; text-align: center;
+}
+.fac-page .fac-denah-header .fac-title { margin-left: auto; margin-right: auto; }
+.fac-page .fac-denah-header .fac-copy { text-align: center; text-align-last: center; }
+.fac-page .fac-denah-preview {
+    max-width: 1010px; margin: 0 auto;
+    border: 1px solid var(--fac-border); border-radius: 16px;
+    background: white; overflow: hidden;
+    box-shadow: 0 10px 26px rgba(18,57,41,.05);
+}
+.fac-page .fac-denah-picture {
+    display: block; width: 100%; padding: 0; cursor: zoom-in;
+    border: 0; background: #f4f6f1;
+}
+.fac-page .fac-denah-picture img { width: 100%; height: auto; display: block; object-fit: contain; }
+.fac-page .fac-denah-picture:focus-visible { outline: 3px solid #0d8f70; outline-offset: -3px; }
+
+/* PDF modal: berada di luar .fac-page karena top layer */
+.fac-plan-dialog {
+    width: min(1120px,96vw); height: min(90vh,840px);
+    max-width: none; max-height: none; padding: 0; border: 0;
+    border-radius: 15px; overflow: hidden; background: #fff;
+    box-shadow: 0 24px 80px rgba(0,0,0,.3);
+}
+.fac-plan-dialog::backdrop { background: rgba(7,30,22,.76); }
+.fac-plan-shell { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.fac-plan-top {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; padding: 12px 17px; border-bottom: 1px solid #e4ede6;
+}
+.fac-plan-top strong { color: #173d2f; font: 800 15px/1.4 Manrope,sans-serif; }
+.fac-plan-actions { display: flex; align-items: center; gap: 12px; }
+.fac-plan-external { color: #087e61; text-decoration: none; font-size: 12px; font-weight: 800; }
+.fac-plan-close {
+    width: 37px; height: 37px; flex: 0 0 auto;
+    border: 1px solid #dae9df; border-radius: 50%;
+    background: #f2f8f4; color: #173d2f;
+    font-size: 25px; line-height: 1; cursor: pointer;
+}
+.fac-plan-frame { width: 100%; flex: 1; min-height: 0; border: 0; background: #f6f8f6; }
+
+@media (max-width: 920px) {
+    .fac-page .fac-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .fac-page .container.fac-intro-grid { grid-template-columns: 1fr; gap: 22px; }
+    .fac-page .fac-card-wide { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+    .fac-page .fac-hero { padding: 35px 0 39px; }
+    .fac-page .fac-section { padding: 38px 0; }
+    .fac-page .fac-grid { grid-template-columns: 1fr; gap: 12px; }
+    .fac-page .fac-card, .fac-page .fac-activity { padding: 20px; }
+    .fac-page .fac-card-wide {
+        display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+    }
+    .fac-page .fac-card-wide .fac-card-number { margin-bottom: 0; }
+    .fac-page .fac-feature { padding: 23px; }
+    .fac-plan-dialog { width: 98vw; height: 93vh; }
+    .fac-plan-top strong { font-size: 12px; }
+    .fac-plan-external { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .fac-page .fac-card { transition: none; }
+}
+</style>
+
+
+
+
+
+
+
+
+
+<script>
+(function () {
+    try {
+        const reduced = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        const seen = sessionStorage.getItem(
+            'rehsosIntroSeen'
+        ) === '1';
+
+        if (!reduced && !seen) {
+            document.documentElement.classList.add(
+                'rehsos-intro-active'
+            );
+        }
+    } catch (error) {}
+})();
+</script>
+
+<link
+    rel="stylesheet"
+    href="/css/site-motion.css?v=9"
+>
+
+<style>
+    /* Loading tidak terlihat saat halaman normal */
+    #rehsos-nav-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 99998;
+        visibility: hidden;
+        pointer-events: none;
+    }
+</style>
+
+<link rel="stylesheet"
+      href="/css/menu-transition.css?v=20">
+
+      <link rel="stylesheet"
+      href="/css/airplane-cursor.css?v=3">
+
+</head>
+
+
+<body class="inner-page">
+
+
+
+<div id="rehsos-intro"
+     aria-label="Animasi pembuka UPTD PP REHSOS">
+
+    <div class="rehsos-intro-door left"></div>
+    <div class="rehsos-intro-door right"></div>
+
+    <div class="rehsos-intro-inner">
+        <img
+            src="/images/logo.png"
+            alt="Logo UPTD PP REHSOS"
+            class="rehsos-intro-logo"
+        >
+
+        <h2 class="rehsos-intro-name">
+            UPTD PP REHSOS
+        </h2>
+
+        <p class="rehsos-intro-location">
+            KABUPATEN SIDOARJO
+        </p>
+
+        <span class="rehsos-intro-line"
+              aria-hidden="true"></span>
+    </div>
+
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro
+    </button>
+
+</div>
+
+
+    <!-- LEWATI INTRO -->
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro →
+    </button>
+
+</div>
+
+<!-- AKHIR INTRO -->
+
+
+    <!-- LEWATI INTRO -->
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro →
+    </button>
+
+</div>
+
+
+
+<!-- TRANSISI ANTAR MENU -->
+
+
+<div id="rehsos-nav-screen"
+     aria-hidden="true"
+     data-pages="[{&quot;url&quot;:&quot;&quot;,&quot;name&quot;:&quot;Beranda&quot;},{&quot;url&quot;:&quot;\/profil&quot;,&quot;name&quot;:&quot;Profil Instansi&quot;},{&quot;url&quot;:&quot;\/layanan&quot;,&quot;name&quot;:&quot;Layanan&quot;},{&quot;url&quot;:&quot;\/informasi&quot;,&quot;name&quot;:&quot;Informasi&quot;},{&quot;url&quot;:&quot;\/fasilitas&quot;,&quot;name&quot;:&quot;Fasilitas&quot;},{&quot;url&quot;:&quot;\/kontak&quot;,&quot;name&quot;:&quot;Hubungi Kami&quot;}]">
+
+    <div class="rehsos-nav-content">
+
+        <h2 class="rehsos-nav-destination"
+            id="rehsos-nav-destination">
+            Beranda
+        </h2>
+
+        <div class="rehsos-nav-loader"
+             aria-hidden="true"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- NAVBAR UTAMA -->
+<header class="header">
+
+    <div class="container nav-inner">
+
+        <!-- LOGO DAN IDENTITAS -->
+        <a href="" class="brand">
+
+            <img
+                src="/images/logo.png"
+                alt="Logo UPTD PP REHSOS Kabupaten Sidoarjo"
+            >
+
+            <span>
+                <strong>UPTD PP REHSOS</strong>
+                <small>Kabupaten Sidoarjo</small>
+            </span>
+
+        </a>
+
+        <!-- TOMBOL MENU HP -->
+        <button
+            id="menu-button"
+            type="button"
+            class="menu-button"
+            aria-label="Buka menu navigasi"
+            aria-controls="main-nav"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <!-- MENU NAVIGASI -->
+        <nav
+            class="nav-links"
+            id="main-nav"
+            aria-label="Navigasi utama"
+        >
+
+            <a
+                href=""
+                class=""
+            >
+                Beranda
+            </a>
+
+            <a
+                href="/profil"
+                class=""
+            >
+                Profil
+            </a>
+
+            <a
+                href="/layanan"
+                class=""
+            >
+                Layanan
+            </a>
+
+            <a
+                href="/informasi"
+                class=""
+            >
+                Informasi
+            </a>
+
+            <a
+                href="/fasilitas"
+                class="active"
+            >
+                Fasilitas
+            </a>
+
+            <a
+                href="/kontak"
+                class="contact-link "
+            >
+                Hubungi Kami ↗
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<div id="rehsos-page">
+    <div class="fac-page">
+    <!-- Hero Fasilitas -->
+    <section class="fac-hero">
+        <div class="container">
+            <span class="fac-hero-tag">FASILITAS DAN KEGIATAN</span>
+            <h1>Fasilitas UPTD PP REHSOS</h1>
+            <p>Menjelajahi sarana dan kegiatan yang mendukung perlindungan, pendampingan, serta pelayanan rehabilitasi sosial di UPTD PP REHSOS Kabupaten Sidoarjo.</p>
+            <a href="#daftar-fasilitas" class="fac-hero-link">Jelajahi Fasilitas &darr;</a>
+        </div>
+    </section>
+
+    <!-- Pengenalan: dua kolom desktop -->
+    <section class="fac-section">
+        <div class="container fac-intro-grid">
+            <div>
+                <span class="fac-label">LINGKUNGAN PELAYANAN</span>
+                <h2 class="fac-title">Mendukung Pelayanan Sosial yang Humanis</h2>
+                <p class="fac-copy">Fasilitas dan lingkungan pelayanan berperan penting dalam mendukung perlindungan serta pendampingan bagi Pemerlu Pelayanan Kesejahteraan Sosial (PPKS). Sarana yang tersedia digunakan untuk menunjang penerimaan, pemenuhan kebutuhan dasar, pemantauan kondisi kesehatan, dan aktivitas sehari-hari selama proses pelayanan. Setiap penerima layanan dapat memiliki kebutuhan yang berbeda sehingga penggunaan fasilitas perlu mempertimbangkan kondisi dan hasil asesmen masing-masing individu. Penataan sarana dan kegiatan yang terarah diharapkan turut mendukung kenyamanan, keselamatan, serta kesinambungan pelayanan.</p>
+                <p class="fac-copy">Dalam kerangka pelayanan terpadu, kegiatan di lingkungan UPTD berkaitan dengan pelaksanaan tugas petugas kesehatan dan pendamping. Petugas pendamping memperhatikan kebutuhan sehari-hari serta perkembangan kondisi penerima layanan, sedangkan petugas kesehatan menangani pemantauan kesehatan sesuai kompetensi dan kewenangannya. Informasi yang relevan dicatat dan dikoordinasikan agar kebutuhan tindak lanjut dapat diketahui oleh petugas terkait. Pemanfaatan setiap sarana tetap mengikuti ketentuan operasional dan kondisi fasilitas yang tersedia.</p>
+            </div>
+            <aside class="fac-feature">
+                <span class="fac-feature-mark" aria-hidden="true">+</span>
+                <h3>Sarana yang Mendukung Pelayanan Terpadu</h3>
+                <p class="fac-copy">Fasilitas UPTD tidak hanya mendukung kebutuhan tempat dan aktivitas, tetapi juga menunjang alur pelayanan sejak penerimaan hingga pendampingan serta tindak lanjut. Ruang dan sarana dimanfaatkan sesuai fungsi masing-masing untuk membantu petugas memberikan pelayanan secara terarah. Kebutuhan kesehatan, kebersihan, makan, istirahat, dan kegiatan sosial diperhatikan dengan mempertimbangkan kondisi penerima layanan. Koordinasi antardivisi menjadi bagian penting agar pelaksanaan pelayanan tetap aman dan berkesinambungan.</p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Fasilitas tetap tujuh item, seperti source asli -->
+    <section class="fac-section fac-soft" id="daftar-fasilitas">
+        <div class="container">
+            <div class="fac-center">
+                <span class="fac-label">SARANA DAN PRASARANA</span>
+                <h2 class="fac-title">Fasilitas UPTD</h2>
+                <p class="fac-copy">Ragam sarana yang mendukung penerimaan, pemenuhan kebutuhan sehari-hari, pelayanan kesehatan, dan pendampingan sosial bagi penerima layanan.</p>
+            </div>
+            <div class="fac-grid">
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">01</span>
+                        <div>
+                            <h3>Ruang Pelayanan</h3>
+                            <p>Ruang pelayanan menunjang proses penerimaan, penyampaian informasi, pencatatan administrasi, dan koordinasi awal bagi penerima layanan. Melalui sarana ini, informasi mengenai kondisi serta kebutuhan awal dapat dicatat dan diteruskan kepada petugas terkait. Penggunaannya mendukung alur pelayanan yang terarah dan terdokumentasi.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">02</span>
+                        <div>
+                            <h3>Tempat Istirahat Sementara</h3>
+                            <p>Tempat istirahat sementara mendukung kebutuhan akomodasi penerima layanan selama menjalani proses perlindungan dan pendampingan sosial. Penggunaan sarana disesuaikan dengan kondisi, kebutuhan, serta pengaturan pelayanan yang berlaku di lingkungan UPTD. Lingkungan istirahat yang layak menjadi bagian dari pemenuhan kebutuhan dasar penerima layanan.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">03</span>
+                        <div>
+                            <h3>Ruang Makan</h3>
+                            <p>Sarana makan mendukung pemenuhan kebutuhan pangan sehari-hari selama penerima layanan berada dalam pendampingan UPTD. Pengaturan kegiatan makan dapat disesuaikan dengan kondisi individu, kebutuhan pelayanan, dan ketentuan operasional yang berlaku. Pemenuhan kebutuhan makan merupakan salah satu unsur penting dalam perlindungan sosial.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">04</span>
+                        <div>
+                            <h3>Kamar Mandi</h3>
+                            <p>Kamar mandi dan sarana sanitasi menunjang kebutuhan kebersihan diri serta kegiatan sehari-hari penerima layanan. Kebersihan lingkungan menjadi salah satu aspek yang perlu diperhatikan untuk mendukung kenyamanan dan kondisi kesehatan selama pelayanan. Penggunaannya disesuaikan dengan kebutuhan serta kemampuan masing-masing individu.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">05</span>
+                        <div>
+                            <h3>Fasilitas Kesehatan</h3>
+                            <p>Sarana pendukung kesehatan dimanfaatkan untuk membantu pengamatan dan pemeriksaan awal sesuai kompetensi serta kewenangan petugas. Pemantauan kondisi dan pencatatan hasil menjadi bagian dari kesinambungan informasi pelayanan. Jika kondisi penerima layanan memerlukan penanganan lebih lanjut, petugas dapat melakukan koordinasi dan rujukan kepada layanan kesehatan yang berwenang.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card ">
+                        <span class="fac-card-number" aria-hidden="true">06</span>
+                        <div>
+                            <h3>Sarana Kegiatan dan Pembinaan</h3>
+                            <p>Sarana kegiatan menunjang aktivitas sosial, pendampingan, pembinaan, dan pengembangan kemampuan penerima layanan sesuai kondisi masing-masing. Kegiatan dapat membantu penerima layanan menjalani aktivitas yang terarah selama memperoleh pelayanan sosial. Pelaksanaan dan intensitas kegiatan menyesuaikan kebutuhan individu serta pendampingan petugas.</p>
+                        </div>
+                    </article>
+                                    <article class="fac-card fac-card-wide">
+                        <span class="fac-card-number" aria-hidden="true">07</span>
+                        <div>
+                            <h3>Pengantaran dan Pendampingan</h3>
+                            <p>Pengantaran dan pendampingan merupakan dukungan mobilitas bagi penerima layanan yang memerlukan pemeriksaan kesehatan, rujukan, atau tindak lanjut lainnya. Petugas membantu koordinasi dengan pihak terkait sesuai kebutuhan serta kewenangannya. Pelaksanaan pengantaran memperhatikan kondisi penerima layanan dan hasil asesmen yang tersedia.</p>
+                        </div>
+                    </article>
+                            </div>
+            <div class="fac-note"><strong>Keterkaitan dengan pelayanan:</strong> Sarana digunakan sesuai kebutuhan penerima layanan serta kewenangan petugas dalam proses penerimaan, pendampingan, pemantauan, dan tindak lanjut. Uraian ini merupakan gambaran umum yang dikembangkan dari rancangan konsep pelayanan terpadu, bukan pernyataan bahwa SOP tersebut telah disahkan.</div>
+        </div>
+    </section>
+
+    <!-- Kegiatan yang sudah ada tetap dipertahankan -->
+    <section class="fac-section" id="kegiatan">
+        <div class="container">
+            <div class="fac-center">
+                <span class="fac-label">AKTIVITAS HARIAN</span>
+                <h2 class="fac-title">Kegiatan di Lingkungan UPTD</h2>
+                <p class="fac-copy">Kegiatan dilaksanakan untuk membantu memenuhi kebutuhan sehari-hari, mendukung interaksi sosial, serta mendampingi penerima layanan sesuai kondisi dan kemampuan masing-masing.</p>
+            </div>
+            <div class="fac-grid">
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">01</span>
+                        <h3>Senam Pagi</h3>
+                        <p>Senam pagi menjadi salah satu bentuk aktivitas fisik yang dapat mendukung kebugaran, kebersamaan, dan rutinitas positif. Pelaksanaannya disesuaikan dengan kemampuan serta kondisi kesehatan penerima layanan.</p>
+                    </article>
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">02</span>
+                        <h3>Kebersihan Lingkungan</h3>
+                        <p>Kegiatan menjaga kebersihan bertujuan mendukung lingkungan pelayanan yang nyaman dan tertata. Keterlibatan penerima layanan, apabila sesuai dengan kondisi dan kemampuannya, dilakukan melalui pendampingan petugas.</p>
+                    </article>
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">03</span>
+                        <h3>Pemenuhan Kebutuhan Sehari-hari</h3>
+                        <p>Pemenuhan kebutuhan sehari-hari mencakup dukungan terhadap makan, kebersihan diri, istirahat, dan aktivitas dasar lainnya. Petugas memberikan bantuan atau pendampingan sesuai kebutuhan setiap penerima layanan.</p>
+                    </article>
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">04</span>
+                        <h3>Kegiatan Sosial dan Pembinaan</h3>
+                        <p>Kegiatan sosial dan pembinaan diarahkan untuk memberikan ruang interaksi, pendampingan, dan dukungan pengembangan diri. Bentuk kegiatan menyesuaikan kebutuhan, kemampuan, serta kondisi sosial penerima layanan.</p>
+                    </article>
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">05</span>
+                        <h3>Peringatan Hari Besar Nasional</h3>
+                        <p>Peringatan hari besar nasional dapat menjadi sarana membangun suasana kebersamaan dan partisipasi di lingkungan UPTD. Pelaksanaannya mempertimbangkan kondisi serta keterlibatan penerima layanan.</p>
+                    </article>
+                                    <article class="fac-activity">
+                        <span class="fac-activity-number" aria-hidden="true">06</span>
+                        <h3>Penjemputan dan Pemulangan</h3>
+                        <p>Kegiatan penjemputan dan pemulangan dilakukan melalui koordinasi dengan keluarga atau pihak terkait berdasarkan kebutuhan serta hasil asesmen. Pertukaran informasi dan tindak lanjut dilakukan sesuai ketentuan agar proses pelayanan tetap terarah.</p>
+                    </article>
+                            </div>
+        </div>
+    </section>
+
+    <!-- Denah yang sudah ada tidak diubah sumber filenya -->
+    <section class="fac-section fac-soft" id="denah">
+        <div class="container">
+            <div class="fac-denah-header">
+                <span class="fac-label">DENAH FASILITAS</span>
+                <h2 class="fac-title">Denah Area UPTD</h2>
+                <p class="fac-copy">Gambaran penataan area dan sarana di lingkungan UPTD PP REHSOS Kabupaten Sidoarjo. Klik gambar untuk melihat dokumen denah dalam tampilan lebih besar.</p>
+            </div>
+            <div class="fac-denah-preview">
+                <button class="fac-denah-picture" type="button" data-denah-open aria-label="Perbesar denah UPTD PP REHSOS">
+                    <img src="/images/denah-uptd.webp"
+                         alt="Denah UPTD PP REHSOS Kabupaten Sidoarjo"
+                         loading="lazy" decoding="async">
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Dialog top layer: aturan CSS-nya tidak bergantung pada .fac-page -->
+<dialog id="facPlanDialog" class="fac-plan-dialog" aria-labelledby="facPlanTitle">
+    <div class="fac-plan-shell">
+        <div class="fac-plan-top">
+            <strong id="facPlanTitle">Denah UPTD PP REHSOS</strong>
+            <div class="fac-plan-actions">
+                <a class="fac-plan-external" href="/dokumen/denah-uptd.pdf"
+                   target="_blank" rel="noopener noreferrer">Buka PDF ↗</a>
+                <button id="facPlanClose" type="button" class="fac-plan-close" aria-label="Tutup denah">&times;</button>
+            </div>
+        </div>
+        <iframe id="facPlanFrame" class="fac-plan-frame" title="Denah UPTD PP REHSOS dalam format PDF"></iframe>
+    </div>
+</dialog>
+</div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('menu-button');
+            const nav = document.getElementById('main-nav');
+
+            if (!button || !nav) return;
+
+            button.addEventListener('click', function () {
+                const opened = nav.classList.toggle('open');
+                button.setAttribute('aria-expanded', String(opened));
+                button.textContent = opened ? '✕' : '☰';
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('open');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.textContent = '☰';
+                });
+            });
+        });
+    </script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const planDialog = document.getElementById('facPlanDialog');
+    const planFrame = document.getElementById('facPlanFrame');
+    const planClose = document.getElementById('facPlanClose');
+    const planUrl = "\/dokumen\/denah-uptd.pdf";
+    let lastPlanTrigger = null;
+
+    if (!planDialog || !planFrame || !planClose) return;
+
+    document.querySelectorAll('[data-denah-open]').forEach(function (button) {
+        button.addEventListener('click', function () {
+            lastPlanTrigger = button;
+            if (typeof planDialog.showModal === 'function') {
+                planFrame.src = planUrl;
+                planDialog.showModal();
+                planClose.focus();
+            } else {
+                window.open(planUrl, '_blank', 'noopener');
+            }
+        });
+    });
+
+    planClose.addEventListener('click', function () { planDialog.close(); });
+
+    planDialog.addEventListener('click', function (event) {
+        const rect = planDialog.getBoundingClientRect();
+        if (event.target === planDialog &&
+            (event.clientX < rect.left || event.clientX > rect.right ||
+             event.clientY < rect.top || event.clientY > rect.bottom)) {
+            planDialog.close();
+        }
+    });
+
+    planDialog.addEventListener('close', function () {
+        planFrame.removeAttribute('src');
+        if (lastPlanTrigger) lastPlanTrigger.focus();
+    });
+});
+</script>
+
+
+<style>
+#rehsos-footer {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #11291f !important;
+    color: #e6f1e9 !important;
+    font-family: 'DM Sans', Arial, sans-serif !important;
+}
+#rehsos-footer *, #rehsos-footer *::before, #rehsos-footer *::after { box-sizing: border-box; }
+#rehsos-footer .rf-inner { width: min(1120px, calc(100% - 50px)); margin: 0 auto; }
+#rehsos-footer .rf-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,.85fr) minmax(0,1.2fr) !important;
+    gap: 30px !important;
+    align-items: start;
+    padding: 28px 0 24px;
+}
+#rehsos-footer .rf-grid > div, #rehsos-footer .rf-grid > nav { min-width: 0; margin: 0; padding: 0; }
+#rehsos-footer h2, #rehsos-footer h3 {
+    color: #fff !important; font-size: 14px !important;
+    font-weight: 800 !important; line-height: 1.4 !important;
+    margin: 0 0 12px !important; letter-spacing: 0 !important;
+}
+#rehsos-footer p { margin: 0 0 10px !important; color: #bdcec4 !important; font-size: 12px !important; line-height: 1.7 !important; }
+#rehsos-footer a { color: #d1e9d8 !important; text-decoration: none !important; font-size: 12px !important; }
+#rehsos-footer a:hover { color: white !important; text-decoration: underline !important; }
+#rehsos-footer .rf-links { display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 11px 16px !important; }
+#rehsos-footer .rf-links a { display: block; margin: 0; padding: 0; }
+#rehsos-footer .rf-map { display: block; width: 100%; height: 128px; border: 0; border-radius: 9px; background: #e9f1eb; }
+#rehsos-footer .rf-mapline { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 9px; }
+#rehsos-footer .rf-mapline span { color: #bdcec4; font-size: 11px; line-height: 1.5; }
+#rehsos-footer .rf-mapline a { font-size: 11px !important; font-weight: 700; }
+#rehsos-footer .rf-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px 20px; flex-wrap: wrap; padding: 12px 0 15px; border-top: 1px solid rgba(255,255,255,.12); }
+#rehsos-footer .rf-bottom span { font-size: 10px !important; color: #a5baad !important; line-height: 1.6; }
+@media (max-width: 800px) {
+    #rehsos-footer .rf-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 25px !important; }
+    #rehsos-footer .rf-place { grid-column: 1 / -1; }
+}
+@media (max-width: 550px) {
+    #rehsos-footer .rf-inner { width: calc(100% - 32px); }
+    #rehsos-footer .rf-grid { grid-template-columns: minmax(0,1fr) !important; gap: 22px !important; padding-top: 25px; }
+    #rehsos-footer .rf-place { grid-column: auto; }
+    #rehsos-footer .rf-map { height: 155px; }
+}
+
+.footer-watermark {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+</style>
+
+<footer id="rehsos-footer">
+    <div class="rf-inner">
+        <div class="rf-grid">
+            <div>
+                <h2>UPTD PP REHSOS</h2>
+                <p>Unit pelayanan sosial di bawah Dinas Sosial Kabupaten Sidoarjo.</p>
+                <a href="tel:+6285711404090">Telp. (+62) 85711404090</a>
+            </div>
+
+            <nav aria-label="Navigasi footer">
+                <h3>Navigasi</h3>
+                <div class="rf-links">
+                    <a href="">Beranda</a>
+                    <a href="/profil">Profil</a>
+                    <a href="/layanan">Layanan</a>
+                    <a href="/informasi">Informasi</a>
+                    <a href="/fasilitas">Fasilitas</a>
+                    <a href="/kontak">Hubungi Kami</a>
+                </div>
+            </nav>
+
+            <div class="rf-place">
+                <h3>Lokasi Kami</h3>
+                <iframe class="rf-map" title="Lokasi UPTD PP REHSOS Kabupaten Sidoarjo"
+                    src="https://maps.google.com/maps?q=Jl.%20Sekolahan%2C%20Cangkring%2C%20Sidokare%2C%20Sidoarjo%2C%20Jawa%20Timur%2061214&amp;z=16&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                <div class="rf-mapline">
+                    <span>Sidokare, Sidoarjo 61214</span>
+                    <a href="https://maps.app.goo.gl/ky7X67a9pCeqYjU77?g_st=ac" target="_blank" rel="noopener noreferrer">Petunjuk arah ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="rf-bottom">
+            <span>© 2026 UPTD PP REHSOS Kabupaten Sidoarjo.</span>
+            <span class="footer-watermark">
+    by Mahasiswa S1 Pendidikan Teknologi Informasi UNESA
+</span>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- INTRO WEBSITE -->
+<div id="rehsos-intro" aria-hidden="true">
+
+    <div class="rehsos-intro-inner">
+
+        <img
+            src="/images/logo.png"
+            class="rehsos-intro-logo"
+            alt=""
+        >
+
+        <h2 class="rehsos-intro-name">
+            UPTD PP REHSOS
+        </h2>
+
+        <p class="rehsos-intro-location">
+            KABUPATEN SIDOARJO
+        </p>
+
+        <div class="rehsos-intro-line"></div>
+
+    </div>
+
+</div>
+<!-- END INTRO -->
+
+
+
+
+<script
+    src="/js/site-motion.js?v=9"
+    defer
+></script>
+
+<script
+    src="/js/menu-transition.js?v=20"
+    defer
+></script>
+
+<script src="/js/airplane-cursor.js?v=3" defer></script>
+</body>
+</html>

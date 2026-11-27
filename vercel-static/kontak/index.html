@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10231d">
+    <meta name="description" content="Website profil UPTD PP REHSOS Kabupaten Sidoarjo">
+    <title>Hubungi Kami | UPTD PP REHSOS Kabupaten Sidoarjo</title>
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark: #10231d;
+            --green: #167c53;
+            --text: #19382a;
+            --muted: #63766b;
+            --soft: #f5f7f3;
+            --border: #e2e8e2;
+            --lime: #d9f0bd;
+        }
+
+        * { box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: var(--text);
+            font: 15px/1.75 'DM Sans', Arial, sans-serif;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+        button { font: inherit; cursor: pointer; }
+
+        .container {
+            width: min(1200px, calc(100% - 48px));
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--dark);
+            color: #fff;
+            box-shadow: 0 3px 18px #00000014;
+        }
+
+        .nav-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            min-width: 0;
+        }
+
+        .brand img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            background: #fff;
+            padding: 4px;
+            border-radius: 50%;
+        }
+
+        .brand strong {
+            display: block;
+            font: 800 16px/1.3 Manrope, sans-serif;
+        }
+
+        .brand small {
+            display: block;
+            font-size: 10px;
+            color: #bfd2c4;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+        }
+
+        .nav-links a {
+            white-space: nowrap;
+            font-size: 13px;
+            font-weight: 700;
+            color: #eaf2ec;
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--lime);
+        }
+
+        .nav-links .contact-link {
+            background: var(--lime);
+            padding: 11px 20px;
+            color: var(--dark);
+            border-radius: 50px;
+        }
+
+        .nav-links .contact-link:hover {
+            background: #c7e8a2;
+            color: var(--dark);
+        }
+
+        .menu-button {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #ffffff44;
+            border-radius: 8px;
+            color: #fff;
+            background: transparent;
+            font-size: 23px;
+        }
+
+        /* KOMPONEN KONTEN */
+        .section { padding: 95px 0; }
+        .soft { background: var(--soft); }
+
+        .eyebrow {
+            display: block;
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 17px;
+        }
+
+        .heading {
+            margin: 0 0 20px;
+            color: var(--text);
+            font: 800 clamp(32px, 4.5vw, 56px)/1.15 Manrope, sans-serif;
+            letter-spacing: -1.7px;
+        }
+
+        .lead {
+            font-size: 16px;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .text-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--green);
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 50px;
+            background: var(--lime);
+            color: var(--dark);
+            font-size: 13px;
+            font-weight: 800;
+            transition: transform .2s ease;
+        }
+
+        .button:hover { transform: translateY(-2px); }
+
+        .page-heading {
+            padding: 76px 0 65px;
+            background: var(--soft);
+        }
+
+        .page-heading h1 {
+            max-width: 850px;
+            margin: 0 0 18px;
+            font: 800 clamp(40px, 5.8vw, 73px)/1.1 Manrope, sans-serif;
+            letter-spacing: -2.5px;
+        }
+
+        .page-heading p {
+            max-width: 700px;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--dark);
+            color: #c6d8cb;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer h3 {
+            color: #fff;
+            font: 800 16px Manrope, sans-serif;
+            margin: 0 0 16px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #b2c8b9;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .footer a { display: block; margin-bottom: 6px; }
+        .footer a:hover { color: #fff; }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 20px;
+            border-top: 1px solid #ffffff22;
+            font-size: 11px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .menu-button { display: block; }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                padding: 18px 24px 24px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                border-top: 1px solid #ffffff25;
+            }
+
+            .nav-links.open { display: flex; }
+            .nav-links a { padding: 11px 0; }
+            .nav-links .contact-link {
+                margin-top: 10px;
+                text-align: center;
+                padding: 12px;
+            }
+
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 580px) {
+            .container { width: calc(100% - 34px); }
+            .nav-inner { min-height: 72px; }
+            .brand img { width: 42px; height: 42px; }
+            .brand strong { font-size: 13px; }
+            .brand small { font-size: 9px; }
+            .section { padding: 70px 0; }
+            .page-heading { padding: 60px 0 45px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .button { transition: none; }
+        }
+
+
+/* =====================================
+   NAVBAR UPTD PP REHSOS - FINAL
+===================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    color: #173b2a;
+    border-bottom: 1px solid #e7eee9;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.035);
+}
+
+.nav-inner {
+    min-height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.brand strong {
+    display: block;
+    color: #173b2a;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.brand small {
+    display: block;
+    color: #728477;
+    font-size: 11px;
+}
+
+/* LINK NAVIGASI */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+    color: #34483c;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: color .25s ease;
+}
+
+.nav-links a:not(.contact-link):hover,
+.nav-links a:not(.contact-link).active {
+    color: #087f56;
+}
+
+.nav-links a:not(.contact-link)::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #087f56;
+    transition: width .25s ease;
+}
+
+.nav-links a:not(.contact-link):hover::after,
+.nav-links a:not(.contact-link).active::after {
+    width: 100%;
+}
+
+/* TOMBOL HUBUNGI KAMI */
+
+.nav-links .contact-link,
+.nav-links .contact-link.active {
+    background: #087f56;
+    color: #ffffff;
+    padding: 13px 23px;
+    border-radius: 50px;
+    white-space: nowrap;
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+.nav-links .contact-link:hover {
+    background: #066a47;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* MENU HP */
+
+.menu-button {
+    display: none;
+    width: 44px;
+    height: 44px;
+    color: #173b2a;
+    background: transparent;
+    border: 1px solid #dce8df;
+    border-radius: 9px;
+    font-size: 24px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        padding: 18px 25px 28px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        border-top: 1px solid #e7eee9;
+        box-shadow: 0 15px 25px rgba(0,0,0,.06);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        color: #34483c;
+        padding: 13px 0;
+        border-bottom: 1px solid #edf2ee;
+    }
+
+    .nav-links a:not(.contact-link)::after {
+        display: none;
+    }
+
+    .nav-links .contact-link {
+        margin-top: 16px;
+        padding: 14px 20px;
+        text-align: center;
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 580px) {
+
+    .nav-inner {
+        min-height: 72px;
+    }
+
+    .brand img {
+        width: 43px;
+        height: 43px;
+    }
+
+    .brand strong {
+        font-size: 13px;
+    }
+
+    .brand small {
+        font-size: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-links a,
+    .nav-links a::after,
+    .nav-links .contact-link {
+        transition: none;
+    }
+}
+
+
+/* ==========================================
+   INTERNAL PAGES — MODERN COMPACT TYPOGRAPHY
+   Tidak memengaruhi halaman Beranda
+========================================== */
+
+/* HERO / JUDUL HALAMAN */
+.inner-page .page-heading {
+    padding: 54px 0 55px;
+    background: #f6f8f5;
+}
+
+.inner-page .page-heading h1 {
+    max-width: 900px;
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(32px, 3.6vw, 47px);
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -1.7px;
+    margin: 0 0 16px;
+    color: #18392a;
+}
+
+.inner-page .page-heading p {
+    max-width: 690px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #65786a;
+    margin: 0;
+}
+
+/* JUDUL SETIAP BAGIAN */
+.inner-page .heading {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(26px, 2.7vw, 35px);
+    line-height: 1.28;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin: 0 0 18px;
+    color: #18392a;
+}
+
+/* LABEL KECIL DI ATAS JUDUL */
+.inner-page .eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    margin-bottom: 14px;
+    color: #168055;
+}
+
+/* PARAGRAF UTAMA */
+.inner-page .lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #66796c;
+}
+
+/* JARAK ANTAR BAGIAN */
+.inner-page .section {
+    padding: 65px 0;
+}
+
+/* PENGECILAN KHUSUS HERO LAYANAN
+   Jika masih memakai class service-page */
+.inner-page .service-page .intro {
+    padding: 57px 0;
+}
+
+.inner-page .service-page .intro h1 {
+    font-size: clamp(32px, 3.6vw, 47px);
+    line-height: 1.18;
+    letter-spacing: -1.7px;
+    margin-bottom: 16px;
+}
+
+.inner-page .service-page .intro p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* KOMPONEN PROFIL */
+.inner-page .profil-poster .judul-kecil {
+    font-size: 21px;
+}
+
+.inner-page .profil-poster .teks-visi {
+    font-size: clamp(19px, 2vw, 25px);
+    line-height: 1.6;
+}
+
+.inner-page .profil-poster .teks-profil {
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* BAGIAN PEMETAAN */
+.inner-page .maps-information {
+    padding: 65px 0;
+}
+
+/* RESPONSIVE TABLET */
+@media (max-width: 900px) {
+
+    .inner-page .page-heading {
+        padding: 45px 0;
+    }
+
+    .inner-page .section {
+        padding: 55px 0;
+    }
+}
+
+/* RESPONSIVE HP */
+@media (max-width: 580px) {
+
+    .inner-page .page-heading {
+        padding: 40px 0 43px;
+    }
+
+    .inner-page .page-heading h1,
+    .inner-page .service-page .intro h1 {
+        font-size: 31px;
+        line-height: 1.22;
+        letter-spacing: -0.9px;
+    }
+
+    .inner-page .heading {
+        font-size: 26px;
+        line-height: 1.3;
+        letter-spacing: -0.6px;
+    }
+
+    .inner-page .page-heading p,
+    .inner-page .lead {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .inner-page .section {
+        padding: 46px 0;
+    }
+
+    .inner-page .service-page .intro {
+        padding: 43px 0;
+    }
+
+    .inner-page .maps-information {
+        padding: 48px 0;
+    }
+}
+
+    </style>
+
+    <style>
+/* HALAMAN KONTAK — khusus kontak.blade.php, tidak mengubah halaman lain */
+.kc-page {
+    --kc-green: #087e61;
+    --kc-dark: #173d2f;
+    --kc-muted: #607568;
+    --kc-border: #e1ebe5;
+    --kc-soft: #f3f9f6;
+    color: var(--kc-dark);
+}
+.kc-page *, .kc-page *::before, .kc-page *::after { box-sizing: border-box; }S
+.kc-page section[id] { scroll-margin-top: 100px; }
+.kc-page .kc-hero {
+    background:
+        linear-gradient(90deg, rgba(7,42,32,.87) 0%, rgba(9,62,47,.68) 53%, rgba(10,75,56,.32) 100%),
+        url('/images/UPTD.jpeg') center 48% / cover no-repeat;
+    color: #fff;
+    padding: 45px 0 49px;
+}
+.kc-page .kc-hero .container { display: block; min-height: 0; }
+.kc-page .kc-hero-label {
+    display: block; margin-bottom: 12px; color: #d4f3e3;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.6px;
+}
+.kc-page .kc-hero h1 {
+    max-width: 780px; margin: 0 0 13px; color: white;
+    font: 800 clamp(31px,3.5vw,45px)/1.2 Manrope, sans-serif;
+    letter-spacing: -1.1px;
+}
+.kc-page .kc-hero p {
+    max-width: 680px; margin: 0 0 20px; color: #e9f6ef;
+    font-size: 14px; line-height: 1.8;
+}
+.kc-page .kc-hero-link {
+    display: inline-flex; align-items: center; gap: 9px;
+    width: fit-content; max-width: 100%;
+    padding: 10px 18px; border: 1px solid rgba(255,255,255,.84);
+    border-radius: 999px; background: transparent;
+    text-decoration: none; color: #fff; font-size: 13px; font-weight: 750;
+    transition: background-color .2s ease;
+}
+.kc-page .kc-hero-link:hover, .kc-page .kc-hero-link:focus-visible {
+    background: rgba(255,255,255,.14); color: #fff;
+}
+.kc-page .kc-section { padding: 54px 0; }
+.kc-page .kc-section-soft { background: var(--kc-soft); }
+.kc-page .kc-info-grid.container {
+    display: grid; grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr);
+    align-items: start; gap: 44px;
+}
+.kc-page .kc-info-grid > * { min-width: 0; }
+.kc-page .kc-label {
+    display: block; margin: 0 0 10px; color: var(--kc-green);
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+}
+.kc-page .kc-title {
+    margin: 0 0 13px; color: var(--kc-dark);
+    font: 800 clamp(26px,2.6vw,34px)/1.28 Manrope, sans-serif;
+    letter-spacing: -.8px;
+}
+.kc-page .kc-copy {
+    color: var(--kc-muted); font-size: 14px; line-height: 1.85;
+    margin: 0 0 19px;
+}
+.kc-page .kc-details { border-top: 1px solid var(--kc-border); margin: 23px 0 0; }
+.kc-page .kc-detail {
+    display: grid; grid-template-columns: 42px minmax(0,1fr);
+    gap: 15px; padding: 18px 0;
+    border-bottom: 1px solid var(--kc-border);
+}
+.kc-page .kc-detail-icon {
+    display: grid; place-items: center; width: 40px; height: 40px;
+    border-radius: 11px; background: #e3f3ea; color: var(--kc-green);
+}
+.kc-page .kc-detail-icon svg {
+    width: 21px; height: 21px; fill: none; stroke: currentColor;
+    stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round;
+}
+.kc-page .kc-detail h3 {
+    margin: 1px 0 7px; font: 800 15px/1.45 Manrope, sans-serif;
+    color: var(--kc-dark);
+}
+.kc-page .kc-detail p, .kc-page .kc-detail address {
+    margin: 0; color: var(--kc-muted); font-size: 13px;
+    line-height: 1.8; font-style: normal;
+}
+.kc-page .kc-detail a:not(.kc-button) {
+    color: #087e61; font-weight: 750; text-decoration: none;
+}
+.kc-page .kc-detail a:not(.kc-button):hover { text-decoration: underline; }
+.kc-page .kc-detail-note { display: block; margin-top: 3px; font-size: 12px; color: #73877b; }
+.kc-page .kc-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 23px; }
+.kc-page .kc-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    padding: 11px 18px; border-radius: 999px; font-size: 13px;
+    font-weight: 800; text-decoration: none; line-height: 1.35;
+    border: 1px solid var(--kc-green);
+}
+.kc-page .kc-button-primary { background: var(--kc-green); color: #fff; }
+.kc-page .kc-button-primary:hover { background: #066c52; color: #fff; }
+.kc-page .kc-button-outline { background: #fff; color: var(--kc-green); }
+.kc-page .kc-button-outline:hover { background: #e9f6ed; color: var(--kc-green); }
+.kc-page .kc-map-card {
+    border: 1px solid var(--kc-border); border-radius: 17px;
+    overflow: hidden; background: #fff;
+    box-shadow: 0 9px 25px rgba(17, 68, 45, .05);
+}
+.kc-page .kc-map-head {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 9px; padding: 16px 19px;
+    border-bottom: 1px solid var(--kc-border);
+}
+.kc-page .kc-map-head h3 {
+    font: 800 15px/1.5 Manrope, sans-serif;
+    color: var(--kc-dark); margin: 0;
+}
+.kc-page .kc-map-head a {
+    font-size: 12px; font-weight: 800; text-decoration: none; color: var(--kc-green);
+}
+.kc-page .kc-map-head a:hover { text-decoration: underline; }
+.kc-page .kc-map {
+    display: block; width: 100%; height: 410px;
+    border: 0; background: #e8f1e9;
+}
+.kc-page .kc-map-foot {
+    padding: 12px 19px; color: #667c6d; font-size: 12px; line-height: 1.7;
+}
+.kc-page .kc-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 22px; padding: 24px 28px; border-radius: 15px;
+    background: #e6f4eb;
+}
+.kc-page .kc-bottom h2 {
+    margin: 0 0 6px; font: 800 19px/1.4 Manrope, sans-serif;
+    color: var(--kc-dark);
+}
+.kc-page .kc-bottom p { margin: 0; color: var(--kc-muted); font-size: 13px; line-height: 1.7; }
+.kc-page .kc-bottom a { white-space: nowrap; }
+@media (max-width: 900px) {
+    .kc-page .kc-info-grid.container { grid-template-columns: 1fr; gap: 27px; }
+    .kc-page .kc-map { height: 340px; }
+}
+@media (max-width: 600px) {
+    .kc-page .kc-hero { padding: 36px 0 40px; }
+    .kc-page .kc-section { padding: 39px 0; }
+    .kc-page .kc-map { height: 290px; }
+    .kc-page .kc-bottom { flex-direction: column; align-items: flex-start; padding: 20px; }
+    .kc-page .kc-bottom a { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .kc-page .kc-hero-link { transition: none; }
+}
+</style>
+
+
+
+
+
+
+
+
+
+<script>
+(function () {
+    try {
+        const reduced = window.matchMedia(
+            '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        const seen = sessionStorage.getItem(
+            'rehsosIntroSeen'
+        ) === '1';
+
+        if (!reduced && !seen) {
+            document.documentElement.classList.add(
+                'rehsos-intro-active'
+            );
+        }
+    } catch (error) {}
+})();
+</script>
+
+<link
+    rel="stylesheet"
+    href="/css/site-motion.css?v=9"
+>
+
+<style>
+    /* Loading tidak terlihat saat halaman normal */
+    #rehsos-nav-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 99998;
+        visibility: hidden;
+        pointer-events: none;
+    }
+</style>
+
+<link rel="stylesheet"
+      href="/css/menu-transition.css?v=20">
+
+      <link rel="stylesheet"
+      href="/css/airplane-cursor.css?v=3">
+
+</head>
+
+
+<body class="inner-page">
+
+
+
+<div id="rehsos-intro"
+     aria-label="Animasi pembuka UPTD PP REHSOS">
+
+    <div class="rehsos-intro-door left"></div>
+    <div class="rehsos-intro-door right"></div>
+
+    <div class="rehsos-intro-inner">
+        <img
+            src="/images/logo.png"
+            alt="Logo UPTD PP REHSOS"
+            class="rehsos-intro-logo"
+        >
+
+        <h2 class="rehsos-intro-name">
+            UPTD PP REHSOS
+        </h2>
+
+        <p class="rehsos-intro-location">
+            KABUPATEN SIDOARJO
+        </p>
+
+        <span class="rehsos-intro-line"
+              aria-hidden="true"></span>
+    </div>
+
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro
+    </button>
+
+</div>
+
+
+    <!-- LEWATI INTRO -->
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro →
+    </button>
+
+</div>
+
+<!-- AKHIR INTRO -->
+
+
+    <!-- LEWATI INTRO -->
+    <button
+        type="button"
+        id="rehsos-intro-skip"
+        class="rehsos-intro-skip"
+    >
+        Lewati Intro →
+    </button>
+
+</div>
+
+
+
+<!-- TRANSISI ANTAR MENU -->
+
+
+<div id="rehsos-nav-screen"
+     aria-hidden="true"
+     data-pages="[{&quot;url&quot;:&quot;&quot;,&quot;name&quot;:&quot;Beranda&quot;},{&quot;url&quot;:&quot;\/profil&quot;,&quot;name&quot;:&quot;Profil Instansi&quot;},{&quot;url&quot;:&quot;\/layanan&quot;,&quot;name&quot;:&quot;Layanan&quot;},{&quot;url&quot;:&quot;\/informasi&quot;,&quot;name&quot;:&quot;Informasi&quot;},{&quot;url&quot;:&quot;\/fasilitas&quot;,&quot;name&quot;:&quot;Fasilitas&quot;},{&quot;url&quot;:&quot;\/kontak&quot;,&quot;name&quot;:&quot;Hubungi Kami&quot;}]">
+
+    <div class="rehsos-nav-content">
+
+        <h2 class="rehsos-nav-destination"
+            id="rehsos-nav-destination">
+            Beranda
+        </h2>
+
+        <div class="rehsos-nav-loader"
+             aria-hidden="true"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- NAVBAR UTAMA -->
+<header class="header">
+
+    <div class="container nav-inner">
+
+        <!-- LOGO DAN IDENTITAS -->
+        <a href="" class="brand">
+
+            <img
+                src="/images/logo.png"
+                alt="Logo UPTD PP REHSOS Kabupaten Sidoarjo"
+            >
+
+            <span>
+                <strong>UPTD PP REHSOS</strong>
+                <small>Kabupaten Sidoarjo</small>
+            </span>
+
+        </a>
+
+        <!-- TOMBOL MENU HP -->
+        <button
+            id="menu-button"
+            type="button"
+            class="menu-button"
+            aria-label="Buka menu navigasi"
+            aria-controls="main-nav"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <!-- MENU NAVIGASI -->
+        <nav
+            class="nav-links"
+            id="main-nav"
+            aria-label="Navigasi utama"
+        >
+
+            <a
+                href=""
+                class=""
+            >
+                Beranda
+            </a>
+
+            <a
+                href="/profil"
+                class=""
+            >
+                Profil
+            </a>
+
+            <a
+                href="/layanan"
+                class=""
+            >
+                Layanan
+            </a>
+
+            <a
+                href="/informasi"
+                class=""
+            >
+                Informasi
+            </a>
+
+            <a
+                href="/fasilitas"
+                class=""
+            >
+                Fasilitas
+            </a>
+
+            <a
+                href="/kontak"
+                class="contact-link active"
+            >
+                Hubungi Kami ↗
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<div id="rehsos-page">
+    <div class="kc-page">
+    <!-- HERO FOTO GEDUNG -->
+    <section class="kc-hero">
+        <div class="container">
+            <span class="kc-hero-label">HUBUNGI KAMI</span>
+            <h1>Kontak dan Lokasi UPTD PP REHSOS</h1>
+            <p>Informasi alamat, telepon, dan lokasi UPTD PP REHSOS Kabupaten Sidoarjo untuk membantu masyarakat mengakses pelayanan sosial.</p>
+            <a href="#lokasi-kontak" class="kc-hero-link">Lihat Lokasi &darr;</a>
+        </div>
+    </section>
+
+    <!-- KONTAK DAN GOOGLE MAPS -->
+    <section class="kc-section" id="lokasi-kontak">
+        <div class="container kc-info-grid">
+            <div>
+                <span class="kc-label">INFORMASI INSTANSI</span>
+                <h2 class="kc-title">Kunjungi atau Hubungi Kami</h2>
+                <p class="kc-copy">UPTD PP REHSOS berada di wilayah Sidokare, Kecamatan Sidoarjo. Gunakan informasi berikut untuk menghubungi petugas atau menemukan lokasi pelayanan.</p>
+
+                <div class="kc-details">
+                    <div class="kc-detail">
+                        <span class="kc-detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                        </span>
+                        <div>
+                            <h3>Alamat</h3>
+                            <address>Jl. Sekolahan / Jl. Kutuk, Cangkring, Sidokare, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61214</address>
+                        </div>
+                    </div>
+
+                    <div class="kc-detail">
+                        <span class="kc-detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.4 2.8a2 2 0 0 1-.6 1.7L7 10a16 16 0 0 0 7 7l1.8-1.9a2 2 0 0 1 1.7-.6l2.8.4a2 2 0 0 1 1.7 2Z"/></svg>
+                        </span>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p><a href="tel:+6285711404090">+62 8571 1404 090</a></p>
+                        </div>
+                    </div>
+
+                    <div class="kc-detail">
+                        <span class="kc-detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                        </span>
+                        <div>
+                            <h3>Operasional Shelter</h3>
+                            <p><strong>24 jam, Senin–Minggu</strong></p>
+                            <span class="kc-detail-note">Informasi ini berlaku untuk operasional layanan shelter, bukan jam layanan administrasi.</span>
+                        </div>
+                    </div>
+
+                    <div class="kc-detail">
+                        <span class="kc-detail-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M7 3v7a5 5 0 0 0 10 0V3"/><path d="M7 7h10M12 15v6M8 21h8"/></svg>
+                        </span>
+                        <div>
+                            <h3>Fasilitas Umum</h3>
+                            <p>Toilet / restroom tersedia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kc-actions">
+                    <a class="kc-button kc-button-primary"
+                       href="https://maps.app.goo.gl/ky7X67a9pCeqYjU77?g_st=ac"
+                       target="_blank" rel="noopener noreferrer">
+                        Buka Google Maps &#8599;
+                    </a>
+                    <a class="kc-button kc-button-outline" href="tel:+62318075421">
+                        Hubungi via Telepon &#8599;
+                    </a>
+                </div>
+            </div>
+
+            <div class="kc-map-card">
+                <div class="kc-map-head">
+                    <h3>Lokasi UPTD PP REHSOS</h3>
+                    <a href="https://maps.app.goo.gl/ky7X67a9pCeqYjU77?g_st=ac"
+                       target="_blank" rel="noopener noreferrer">Petunjuk Arah &#8599;</a>
+                </div>
+                <iframe
+                    class="kc-map"
+                    title="Peta lokasi UPTD PP REHSOS Kabupaten Sidoarjo"
+                    src="https://www.google.com/maps?output=embed&amp;q=Jl.%20Sekolahan%2C%20Cangkring%2C%20Sidokare%2C%20Kecamatan%20Sidoarjo%2C%20Kabupaten%20Sidoarjo%2C%20Jawa%20Timur%2061214"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                ></iframe>
+                <div class="kc-map-foot">Cangkring, Sidokare, Kecamatan Sidoarjo, Kabupaten Sidoarjo, Jawa Timur.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PENGHUBUNG KE PANDUAN, TANPA FORM DATA PRIBADI -->
+    <section class="kc-section kc-section-soft">
+        <div class="container">
+            <div class="kc-bottom">
+                <div>
+                    <h2>Ingin mengetahui prosedur pelayanan?</h2>
+                    <p>Baca tahapan dan persyaratan layanan sebelum berkunjung.</p>
+                </div>
+                <a href="/informasi" class="kc-button kc-button-primary">Lihat Informasi Pelayanan &#8599;</a>
+            </div>
+        </div>
+    </section>
+</div>
+</div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('menu-button');
+            const nav = document.getElementById('main-nav');
+
+            if (!button || !nav) return;
+
+            button.addEventListener('click', function () {
+                const opened = nav.classList.toggle('open');
+                button.setAttribute('aria-expanded', String(opened));
+                button.textContent = opened ? '✕' : '☰';
+            });
+
+            nav.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    nav.classList.remove('open');
+                    button.setAttribute('aria-expanded', 'false');
+                    button.textContent = '☰';
+                });
+            });
+        });
+    </script>
+
+    
+
+<style>
+#rehsos-footer {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #11291f !important;
+    color: #e6f1e9 !important;
+    font-family: 'DM Sans', Arial, sans-serif !important;
+}
+#rehsos-footer *, #rehsos-footer *::before, #rehsos-footer *::after { box-sizing: border-box; }
+#rehsos-footer .rf-inner { width: min(1120px, calc(100% - 50px)); margin: 0 auto; }
+#rehsos-footer .rf-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0,1fr) minmax(0,.85fr) minmax(0,1.2fr) !important;
+    gap: 30px !important;
+    align-items: start;
+    padding: 28px 0 24px;
+}
+#rehsos-footer .rf-grid > div, #rehsos-footer .rf-grid > nav { min-width: 0; margin: 0; padding: 0; }
+#rehsos-footer h2, #rehsos-footer h3 {
+    color: #fff !important; font-size: 14px !important;
+    font-weight: 800 !important; line-height: 1.4 !important;
+    margin: 0 0 12px !important; letter-spacing: 0 !important;
+}
+#rehsos-footer p { margin: 0 0 10px !important; color: #bdcec4 !important; font-size: 12px !important; line-height: 1.7 !important; }
+#rehsos-footer a { color: #d1e9d8 !important; text-decoration: none !important; font-size: 12px !important; }
+#rehsos-footer a:hover { color: white !important; text-decoration: underline !important; }
+#rehsos-footer .rf-links { display: grid !important; grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 11px 16px !important; }
+#rehsos-footer .rf-links a { display: block; margin: 0; padding: 0; }
+#rehsos-footer .rf-map { display: block; width: 100%; height: 128px; border: 0; border-radius: 9px; background: #e9f1eb; }
+#rehsos-footer .rf-mapline { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 9px; }
+#rehsos-footer .rf-mapline span { color: #bdcec4; font-size: 11px; line-height: 1.5; }
+#rehsos-footer .rf-mapline a { font-size: 11px !important; font-weight: 700; }
+#rehsos-footer .rf-bottom { display: flex; justify-content: space-between; align-items: center; gap: 10px 20px; flex-wrap: wrap; padding: 12px 0 15px; border-top: 1px solid rgba(255,255,255,.12); }
+#rehsos-footer .rf-bottom span { font-size: 10px !important; color: #a5baad !important; line-height: 1.6; }
+@media (max-width: 800px) {
+    #rehsos-footer .rf-grid { grid-template-columns: repeat(2,minmax(0,1fr)) !important; gap: 25px !important; }
+    #rehsos-footer .rf-place { grid-column: 1 / -1; }
+}
+@media (max-width: 550px) {
+    #rehsos-footer .rf-inner { width: calc(100% - 32px); }
+    #rehsos-footer .rf-grid { grid-template-columns: minmax(0,1fr) !important; gap: 22px !important; padding-top: 25px; }
+    #rehsos-footer .rf-place { grid-column: auto; }
+    #rehsos-footer .rf-map { height: 155px; }
+}
+
+.footer-watermark {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    letter-spacing: 0.2px;
+}
+</style>
+
+<footer id="rehsos-footer">
+    <div class="rf-inner">
+        <div class="rf-grid">
+            <div>
+                <h2>UPTD PP REHSOS</h2>
+                <p>Unit pelayanan sosial di bawah Dinas Sosial Kabupaten Sidoarjo.</p>
+                <a href="tel:+6285711404090">Telp. (+62) 85711404090</a>
+            </div>
+
+            <nav aria-label="Navigasi footer">
+                <h3>Navigasi</h3>
+                <div class="rf-links">
+                    <a href="">Beranda</a>
+                    <a href="/profil">Profil</a>
+                    <a href="/layanan">Layanan</a>
+                    <a href="/informasi">Informasi</a>
+                    <a href="/fasilitas">Fasilitas</a>
+                    <a href="/kontak">Hubungi Kami</a>
+                </div>
+            </nav>
+
+            <div class="rf-place">
+                <h3>Lokasi Kami</h3>
+                <iframe class="rf-map" title="Lokasi UPTD PP REHSOS Kabupaten Sidoarjo"
+                    src="https://maps.google.com/maps?q=Jl.%20Sekolahan%2C%20Cangkring%2C%20Sidokare%2C%20Sidoarjo%2C%20Jawa%20Timur%2061214&amp;z=16&amp;output=embed"
+                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                <div class="rf-mapline">
+                    <span>Sidokare, Sidoarjo 61214</span>
+                    <a href="https://maps.app.goo.gl/ky7X67a9pCeqYjU77?g_st=ac" target="_blank" rel="noopener noreferrer">Petunjuk arah ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="rf-bottom">
+            <span>© 2026 UPTD PP REHSOS Kabupaten Sidoarjo.</span>
+            <span class="footer-watermark">
+    by Mahasiswa S1 Pendidikan Teknologi Informasi UNESA
+</span>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- INTRO WEBSITE -->
+<div id="rehsos-intro" aria-hidden="true">
+
+    <div class="rehsos-intro-inner">
+
+        <img
+            src="/images/logo.png"
+            class="rehsos-intro-logo"
+            alt=""
+        >
+
+        <h2 class="rehsos-intro-name">
+            UPTD PP REHSOS
+        </h2>
+
+        <p class="rehsos-intro-location">
+            KABUPATEN SIDOARJO
+        </p>
+
+        <div class="rehsos-intro-line"></div>
+
+    </div>
+
+</div>
+<!-- END INTRO -->
+
+
+
+
+<script
+    src="/js/site-motion.js?v=9"
+    defer
+></script>
+
+<script
+    src="/js/menu-transition.js?v=20"
+    defer
+></script>
+
+<script src="/js/airplane-cursor.js?v=3" defer></script>
+</body>
+</html>

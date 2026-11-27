@@ -643,7 +643,6 @@
 
     @stack('styles')
 
-<link rel="stylesheet" href="{{ asset('css/layout-rapi.css') }}">
 
 
 {{-- PERBAIKAN GRID KHUSUS HALAMAN LAYANAN --}}

@@ -1,0 +1,185 @@
+
+/* ==========================================
+   UPTD PP REHSOS
+   CUSTOM AIRPLANE CURSOR
+   POPUP / DIALOG SUPPORT
+========================================== */
+
+/* ==========================================
+   1. KURSOR DEFAULT
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    body.airplane-enabled,
+    body.airplane-enabled a,
+    body.airplane-enabled button,
+    body.airplane-enabled [role="button"],
+    body.airplane-enabled summary {
+        cursor: none !important;
+    }
+
+    /* Kursor normal untuk mengetik */
+    body.airplane-enabled input,
+    body.airplane-enabled textarea,
+    body.airplane-enabled [contenteditable="true"] {
+        cursor: text !important;
+    }
+
+    body.airplane-enabled select {
+        cursor: auto !important;
+    }
+}
+
+/* ==========================================
+   2. PESAWAT KUSTOM
+========================================== */
+
+#airplane-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    /* Ukuran pesawat kecil */
+    width: 28px;
+    height: 32px;
+
+    z-index: 99995;
+    pointer-events: none !important;
+
+    opacity: 0;
+
+    transform: translate(-50%, -5%);
+
+    transition: opacity 0.18s ease;
+
+    will-change: left, top;
+}
+
+/* Bentuk dan gerakan pesawat */
+
+#airplane-cursor svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+
+    transform-origin: 50% 5%;
+
+    transition:
+        transform 0.12s ease-out;
+
+    filter:
+        drop-shadow(
+            0 2px 3px rgba(0,0,0,0.18)
+        );
+}
+
+/* ==========================================
+   3. JEJAK EMAS PESAWAT
+========================================== */
+
+#airplane-trail {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 99994;
+
+    pointer-events: none !important;
+}
+
+/* ==========================================
+   4. EFEK SAAT DIKLIK
+========================================== */
+
+#airplane-cursor.airplane-click svg {
+    filter:
+        drop-shadow(
+            0 0 7px rgba(232,200,120,0.9)
+        );
+}
+
+/* ==========================================
+   5. FIX KURSOR DI DALAM POP-UP
+========================================== */
+
+/*
+   Kursor yang sudah dipindahkan oleh
+   airplane-cursor.js ke dalam dialog
+   akan tampil di lapisan dialog.
+*/
+
+dialog[open] > #airplane-cursor {
+    position: fixed !important;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: none !important;
+}
+
+dialog[open] > #airplane-trail {
+    position: fixed !important;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 2147483646 !important;
+
+    pointer-events: none !important;
+}
+
+/* ==========================================
+   6. KURSOR DALAM DIALOG
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    body.airplane-enabled dialog[open],
+    body.airplane-enabled dialog[open] a,
+    body.airplane-enabled dialog[open] button,
+    body.airplane-enabled dialog[open] [role="button"],
+    body.airplane-enabled dialog[open] summary {
+        cursor: none !important;
+    }
+
+    /* Tetap nyaman untuk input teks */
+    body.airplane-enabled dialog[open] input,
+    body.airplane-enabled dialog[open] textarea,
+    body.airplane-enabled dialog[open]
+    [contenteditable="true"] {
+        cursor: text !important;
+    }
+
+    body.airplane-enabled dialog[open] select {
+        cursor: auto !important;
+    }
+}
+
+/* ==========================================
+   7. RESPONSIVE & AKSESIBILITAS
+========================================== */
+
+/* Nonaktifkan pada HP dan tablet sentuh */
+
+@media (hover: none),
+       (pointer: coarse),
+       (prefers-reduced-motion: reduce) {
+
+    #airplane-cursor,
+    #airplane-trail {
+        display: none !important;
+    }
+
+    body.airplane-enabled,
+    body.airplane-enabled a,
+    body.airplane-enabled button {
+        cursor: auto !important;
+    }
+}
