@@ -1463,7 +1463,7 @@
         <!-- GAMBAR STRUKTUR PETUGAS -->
         <div class="pf-structure-image">
             <img
-                src="{{ asset('images/Struktur-Petugas.png') }}"
+                src="{{ asset('images/struktur-petugas-fix.png') }}"
                 alt="Struktur Petugas UPTD PP REHSOS Kabupaten Sidoarjo"
                 loading="lazy"
             >
@@ -1476,7 +1476,7 @@
             </span>
 
             <a
-                href="{{ asset('images/struktur-petugas.png') }}"
+                href="{{ asset('images/struktur-petugas-fix.png') }}"
                 target="_blank"
                 rel="noopener noreferrer"
             >
